@@ -419,5 +419,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74b112208ab687499c9db865f5c642c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  accelerationForce: 20
+  maxSpeed: 5
   rb2d: {fileID: 1876396807}
