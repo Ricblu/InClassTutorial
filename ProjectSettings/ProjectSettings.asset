@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: ac019b04c5563ff4b84fc85c1096a29e
+  productGUID: e31947706057cea418a4348b73992ebb
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: InClassTutorials
+  productName: InClassTest
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -646,8 +646,8 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: c050ecb7-0e40-4cab-8d27-925412620e13
-  projectName: InClassTutorials
+  cloudProjectId: 3c71ae32-98f3-4dbf-b3d7-7d3457a779de
+  projectName: InClassTest
   organizationId: unity_izi5zzcx2ogn6g
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
