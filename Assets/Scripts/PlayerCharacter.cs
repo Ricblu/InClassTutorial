@@ -58,7 +58,7 @@ public class PlayerCharacter : MonoBehaviour
     private void UpdateIsOnGround()
         {
             isOnGround = groundDectTrigger.OverlapCollider(groundContactFilter, groundHitDectionResults) > 0;
-            Debug.Log("IsOnGround?: " + isOnGround);
+           // Debug.Log("IsOnGround?: " + isOnGround);
         }
     private void UpdateHorizontalInput()
     {
