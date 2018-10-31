@@ -9,8 +9,9 @@ public class Hazard : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
             {
-             Debug.Log("Player entered hazard.");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                 Debug.Log("Player entered hazard.");
+                 PlayerCharacter player = collision.GetComponent<PlayerCharacter>();
+                 player.Respawn();
             }
         else
         {
