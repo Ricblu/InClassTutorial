@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCharacter : MonoBehaviour
-    {
+{
 
     [SerializeField]
     private float accelerationForce = 5;
@@ -13,9 +13,15 @@ public class PlayerCharacter : MonoBehaviour
 
     [SerializeField]
     private float jumpForce = 10;
-        
+
     [SerializeField]
     private Rigidbody2D rb2d;
+
+    [SerializeField]
+    private Collider2D playerGroundCollider;
+
+    [SerializeField]
+    private PhysicsMaterial2D playerMovingPhysicsMaterial, playerStoppingPhysicsMaterial;
 
     [SerializeField]
     private Collider2D groundDectTrigger;
@@ -27,14 +33,26 @@ public class PlayerCharacter : MonoBehaviour
     private bool isOnGround;
     private Collider2D[] groundHitDectionResults = new Collider2D[16];
 
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    void Update()
     {
         UpdateIsOnGround();
 
         UpdateHorizontalInput();
 
         HandeJumpInput();
+    }
+
+    private void UpdatePhysicsMaterial()
+    {
+        if (Mathf.Abs(horizontalInput) > 0)
+        {
+            playerGroundCollider.sharedMaterial = playerMovingPhysicsMaterial;
+        }
+        else
+        {
+            playerGroundCollider.sharedMaterial = playerStoppingPhysicsMaterial;
+        }
     }
 
     private void UpdateIsOnGround()
@@ -44,7 +62,7 @@ public class PlayerCharacter : MonoBehaviour
         }
     private void UpdateHorizontalInput()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
     }
 
     private void HandeJumpInput()
@@ -56,9 +74,10 @@ public class PlayerCharacter : MonoBehaviour
     }
 
     private void FixedUpdate()
-        {
+      {
+            UpdatePhysicsMaterial();
             Move();
-        }
+      }
 
     private void Move()
     {
