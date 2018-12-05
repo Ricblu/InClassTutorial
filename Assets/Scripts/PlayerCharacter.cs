@@ -20,28 +20,35 @@ public class PlayerCharacter : MonoBehaviour
 
     [SerializeField]
     private Collider2D playerGroundCollider;
+    [SerializeField]
+    private Collider2D playerWallCollider;
 
     [SerializeField]
     private PhysicsMaterial2D playerMovingPhysicsMaterial, playerStoppingPhysicsMaterial;
 
     [SerializeField]
     private Collider2D groundDectTrigger;
+    [SerializeField]
+    private Collider2D wallDectTrigger;
 
     [SerializeField]
     private ContactFilter2D groundContactFilter;
+    [SerializeField]
+    private ContactFilter2D wallContactFilter;
 
     private float horizontalInput;
+    private bool isOnWall;
     private bool isOnGround;
     private Collider2D[] groundHitDectionResults = new Collider2D[16];
+    private Collider2D[] wallHitDectionResults = new Collider2D[16];
     private Checkpoint currentCheckpoint;
 
     // Update is called once per frame
     void Update()
     {
+        UpdateIsOnWall();
         UpdateIsOnGround();
-
         UpdateHorizontalInput();
-
         HandeJumpInput();
     }
 
@@ -57,6 +64,10 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
 
+  private void UpdateIsOnWall()
+     {
+        isOnWall = wallDectTrigger.OverlapCollider(wallContactFilter, wallHitDectionResults) > 0;
+     }
     private void UpdateIsOnGround()
         {
             isOnGround = groundDectTrigger.OverlapCollider(groundContactFilter, groundHitDectionResults) > 0;
@@ -68,8 +79,12 @@ public class PlayerCharacter : MonoBehaviour
     }
 
     private void HandeJumpInput()
-    {   
+    {
         if (Input.GetButtonDown("Jump") && isOnGround)
+        {
+            rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+        if (Input.GetButtonDown("Jump") && isOnWall)
         {
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
