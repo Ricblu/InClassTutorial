@@ -84,7 +84,7 @@ public class PlayerCharacter : MonoBehaviour
         {
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
-        if (Input.GetButtonDown("Jump") && isOnWall)
+       else if (Input.GetButtonDown("Jump") && isOnWall)
         {
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }

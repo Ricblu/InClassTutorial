@@ -211,7 +211,7 @@ Transform:
   m_LocalScale: {x: 5.762027, y: 4.7386637, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &116760164
 Prefab:
@@ -250,7 +250,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4768317637610268, guid: 8a898b5d3d273f647add78738cbb0373, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1504634244050948, guid: 8a898b5d3d273f647add78738cbb0373, type: 2}
       propertyPath: m_Name
@@ -342,7 +342,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4768317637610268, guid: 8a898b5d3d273f647add78738cbb0373, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1504634244050948, guid: 8a898b5d3d273f647add78738cbb0373, type: 2}
       propertyPath: m_Name
@@ -388,7 +388,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4768317637610268, guid: 8a898b5d3d273f647add78738cbb0373, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8a898b5d3d273f647add78738cbb0373, type: 2}
@@ -491,7 +491,7 @@ Transform:
   m_LocalScale: {x: 6.586793, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -678,7 +678,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1026097059
 GameObject:
@@ -799,7 +799,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1119346123
 GameObject:
@@ -1131,7 +1131,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1537631339}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.93, y: 1.34, z: 0}
+  m_LocalPosition: {x: -10.91, y: 1.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 519420032}
@@ -1154,11 +1154,13 @@ MonoBehaviour:
   jumpForce: 10
   rb2d: {fileID: 1537631340}
   playerGroundCollider: {fileID: 1537631341}
+  playerWallCollider: {fileID: 0}
   playerMovingPhysicsMaterial: {fileID: 6200000, guid: da9f2b3791c900f4fb8e2ee0e03f0b74,
     type: 2}
   playerStoppingPhysicsMaterial: {fileID: 6200000, guid: b7aaa8284decb8e4eb768d61bcf052a1,
     type: 2}
   groundDectTrigger: {fileID: 1537631345}
+  wallDectTrigger: {fileID: 0}
   groundContactFilter:
     useTriggers: 0
     useLayerMask: 1
@@ -1169,6 +1171,20 @@ MonoBehaviour:
     layerMask:
       serializedVersion: 2
       m_Bits: 256
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  wallContactFilter:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 512
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
@@ -1225,7 +1241,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4768317637610268, guid: 8a898b5d3d273f647add78738cbb0373, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1504634244050948, guid: 8a898b5d3d273f647add78738cbb0373, type: 2}
       propertyPath: m_Name
@@ -1441,7 +1457,7 @@ GameObject:
   - component: {fileID: 2005458102}
   - component: {fileID: 2005458101}
   - component: {fileID: 2005458100}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: SlowFloor Right Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1529,5 +1545,5 @@ Transform:
   m_LocalScale: {x: 6.586793, y: 4.369716, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
